@@ -4,6 +4,16 @@ using System.Text;
 using System.Text.Json.Nodes;
 
 ApplicationConfiguration.Initialize();
+if(args.Contains("--check-package"))
+{
+    File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"control.check.json"),System.Text.Json.JsonSerializer.Serialize(new{Runtime=Environment.Version.ToString(),X64=Environment.Is64BitProcess,App="GeekMagicControl"}));
+    return;
+}
+if(ConnectionSetup.IsRequired())
+{
+    using var setup=new ConnectionSetup();
+    if(setup.ShowDialog()!=DialogResult.OK)return;
+}
 Application.Run(new ControlWindow());
 
 sealed record MetricChoice(string Id,string Name,string Field,string Unit,string BarField)

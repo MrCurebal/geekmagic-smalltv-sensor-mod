@@ -22,3 +22,5 @@ hardware-report.txt
 sensors.json
 board-sensors.json
 .vs/
+/packaging/licenses/
+*.check.json

@@ -17,6 +17,7 @@ Your computer reads its hardware sensors and sends a small JSON packet over your
 - [Compatibility](#compatibility)
 - [How it works](#how-it-works)
 - [Quick start](#quick-start)
+- [Windows download](#windows-download-no-build-needed)
 - [Windows setup](#windows)
 - [Customize the dashboard](#customize-the-dashboard)
 - [Linux / CachyOS](#linux--cachyos)
@@ -78,6 +79,14 @@ flowchart LR
 Sensor updates do not write image files or repeatedly write the device's flash. Saving display or Wi-Fi settings is a separate, occasional flash write. Closing the desktop control window leaves the background sender running.
 
 ## Quick start
+
+### Windows download (no build needed)
+
+Download **GeekMagic-Sensor-Mod-v1.5.0-windows-x64.zip** from [GitHub Releases](https://github.com/MrCurebal/geekmagic-smalltv-sensor-mod/releases/latest). Extract the entire ZIP into a permanent, writable folder and open **GeekMagicControl.exe**. The first-run dialog asks for your display address and the device's API key. Run **InstallStartup.exe** to start the elevated sensor sender and enable automatic startup.
+
+The x64 package bundles the .NET runtime: no .NET SDK, Python or compilation is required for the Windows apps. PawnIO may still be needed to access CPU/motherboard sensors; obtain it from the official LibreHardwareMonitor project. The device must already have Sensor Mod firmware 1.5 or newer. This Windows ZIP does not flash the device or contain a universal firmware binary.
+
+The following steps are for building the firmware or Windows apps from source.
 
 1. Install Git, Python 3 and the .NET 10 SDK for Windows builds. Clone the project:
 
@@ -155,6 +164,8 @@ clients/windows/sender/   LibreHardwareMonitor-based background sender
 clients/windows/control/ Windows desktop control app
 clients/linux/            Python 3 Linux sender
 tools/configure.py        Creates private local configuration
+tools/package-windows.ps1 Builds a self-contained Windows release ZIP
+packaging/                Portable package quick-start guide
 docs/                    Installation and HTTP API documentation
 ```
 

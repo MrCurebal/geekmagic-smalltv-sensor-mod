@@ -2,6 +2,12 @@ using System.Text;
 using System.Text.Json;
 using LibreHardwareMonitor.Hardware;
 
+if(args.Contains("--check-package"))
+{
+    File.WriteAllText(Path.Combine(AppContext.BaseDirectory,"sender.check.json"),JsonSerializer.Serialize(new{Runtime=Environment.Version.ToString(),X64=Environment.Is64BitProcess,SensorLibrary=typeof(Computer).Assembly.GetName().Version?.ToString()}));
+    return;
+}
+
 using var mutex = new Mutex(true, @"Local\GeekMagicPcMonitor", out bool owner);
 if (!owner) return;
 var root = AppContext.BaseDirectory;

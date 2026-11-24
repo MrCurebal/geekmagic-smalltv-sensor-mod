@@ -1,0 +1,49 @@
+GEEKMAGIC SMALLTV SENSOR MOD - WINDOWS x64
+Version 1.5.0
+
+This portable package includes the .NET runtime. You do not need a compiler,
+the .NET SDK, a separate .NET installation, or Python to run these Windows apps.
+
+BEFORE YOU START
+Your SmallTV Ultra must already be running Sensor Mod firmware 1.5 or newer.
+The original GeekMagic clock firmware does not support this sender's API.
+Firmware installation: https://github.com/MrCurebal/geekmagic-smalltv-sensor-mod/blob/main/docs/INSTALLATION.md
+
+FIRST RUN
+1. Extract the ENTIRE ZIP to a permanent, writable folder.
+2. Open GeekMagicControl.exe.
+3. Enter your display's local HTTP address and its device key (ApiKey).
+   The key must match the one used to build/configure the device firmware.
+   It is NOT your Wi-Fi password or your Windows password.
+4. Open InstallStartup.exe and accept its administrator prompt if you want
+   hardware monitoring to start automatically when you sign in.
+   The installer starts the background sender immediately.
+5. Return to GeekMagicControl.exe to view readings and customize the display.
+
+If CPU or motherboard temperatures are missing, install PawnIO from the official
+LibreHardwareMonitor project, then restart the background sender:
+https://github.com/LibreHardwareMonitor/LibreHardwareMonitor
+
+USING THE APP
+- Panels: choose 1-4 sections.
+- For two panels, choose Side by side or Stacked.
+- Click a panel to choose its temperature, load or RAM reading.
+- Apply to display saves the layout and brightness on the device.
+- Closing the control window does not stop the sender.
+- Use Pause sending / Start sending to control the background task.
+- Keep the extracted folder in its installed location after setting up startup.
+
+FILES
+GeekMagicControl.exe   Desktop controls and first-run connection setup.
+MiniScreen.exe        Background sensor sender (hidden, no console window).
+InstallStartup.exe    Installs the automatic startup task with sensor privileges.
+config.example.json   Example settings; the app creates your own config.json.
+licenses/             Third-party license notices.
+
+Your config.json contains your private device key. Do not share it.
+This download contains no personal Wi-Fi credentials or device keys and does not
+include a prebuilt device firmware image. Windows apps and the device firmware
+are separate parts of the project.
+
+Source and full documentation:
+https://github.com/MrCurebal/geekmagic-smalltv-sensor-mod
