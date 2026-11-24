@@ -1,0 +1,10 @@
+{
+  "Device": "http://192.168.1.100/",
+  "ApiKey": "CHANGE_ME",
+  "IntervalSeconds": 2,
+  "Brightness": 32,
+  "TaskName": "GeekMagicSensorSender",
+  "PanelCount": 4,
+  "Orientation": "side-by-side",
+  "PanelMetrics": ["case_temp", "cpu_temp", "ram_load", "gpu_temp"]
+}
